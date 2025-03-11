@@ -1,0 +1,310 @@
+:root {
+    --primary-color: #0073e6;
+    --hover-color: #005bb5;
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --border-color: #e0e0e0;
+    --progress-bg: #f0f0f0;
+}
+
+body.dark-mode {
+    --primary-color: #4a9eff;
+    --hover-color: #6cb0ff;
+    --bg-color: #1a1a1a;
+    --text-color: #ffffff;
+    --border-color: #404040;
+    --progress-bg: #333333;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 10px;
+    width: 350px;
+    height: 520px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+    margin: 0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+h2 {
+    margin: 0;
+    font-size: 1.3em;
+}
+
+.controls {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.progress-bar {
+    height: 6px;
+    background-color: var(--progress-bg);
+    border-radius: 3px;
+    margin-bottom: 12px;
+    position: relative;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: var(--primary-color);
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+.progress-text {
+    position: absolute;
+    right: 5px;
+    top: -15px;
+    font-size: 11px;
+    color: var(--text-color);
+}
+
+label {
+    display: block;
+    margin-bottom: 4px;
+    padding: 3px 5px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    position: relative;
+    padding-right: 60px;
+    font-size: 0.9em;
+    line-height: 1.4;
+}
+
+label:hover {
+    background-color: var(--progress-bg);
+}
+
+input[type="checkbox"] {
+    margin-right: 6px;
+}
+
+h3 {
+    margin: 8px 0 6px;
+    color: var(--primary-color);
+    font-size: 1em;
+}
+
+button {
+    padding: 4px 8px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    transition: background-color 0.2s;
+    font-size: 0.9em;
+}
+
+button:hover {
+    background-color: var(--hover-color);
+}
+
+.form-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    padding-top: 8px;
+    border-top: 1px solid var(--border-color);
+}
+
+.completion-info {
+    font-size: 0.85em;
+    color: var(--text-color);
+}
+
+.keyboard-shortcuts {
+    position: relative;
+    margin-top: 10px;
+}
+
+.shortcuts-modal {
+    position: absolute;
+    bottom: 100%;
+    right: 0;
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    padding: 8px;
+    margin-bottom: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    font-size: 0.9em;
+}
+
+kbd {
+    background-color: var(--progress-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 3px;
+    padding: 1px 4px;
+    font-size: 0.85em;
+}
+
+.shortcuts-modal ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.shortcuts-modal li {
+    margin: 4px 0;
+}
+
+#theme-toggle, #edit-mode {
+    padding: 5px;
+    font-size: 1em;
+}
+
+/* Edit mode styles */
+.edit-only {
+    display: none;
+}
+
+body.edit-mode .edit-only {
+    display: flex;
+}
+
+.section {
+    position: relative;
+    margin-bottom: 6px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section-controls {
+    display: flex;
+    gap: 4px;
+}
+
+.add-item {
+    padding: 2px 5px;
+    font-size: 0.85em;
+}
+
+body.edit-mode label {
+    cursor: text;
+}
+
+body.edit-mode label:hover::after {
+    content: '\f304';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    right: 35px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--primary-color);
+    font-size: 0.85em;
+}
+
+.editable-input {
+    width: 100%;
+    padding: 3px;
+    margin: 1px 0;
+    border: 1px solid var(--border-color);
+    border-radius: 3px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-size: 0.9em;
+}
+
+.delete-item {
+    color: #ff4444;
+    background: none;
+    border: none;
+    padding: 2px 5px;
+    cursor: pointer;
+    font-size: 0.85em;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.delete-item:hover {
+    color: #ff0000;
+    background-color: rgba(255, 0, 0, 0.1);
+}
+
+[title] {
+    position: relative;
+}
+
+[title]:hover::after {
+    content: attr(title);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 4px 8px;
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    border-radius: 3px;
+    font-size: 11px;
+    white-space: nowrap;
+    z-index: 1000;
+}
+
+/* Editable title and categories */
+.editable-title, .editable-category {
+    position: relative;
+    transition: background-color 0.2s;
+}
+
+body.edit-mode .editable-title:hover,
+body.edit-mode .editable-category:hover {
+    background-color: var(--progress-bg);
+    cursor: text;
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+
+body.edit-mode .editable-title:hover::after,
+body.edit-mode .editable-category:hover::after {
+    content: '\f304';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--primary-color);
+    font-size: 0.85em;
+}
+
+.editable-title input,
+.editable-category input {
+    font-size: inherit;
+    font-weight: inherit;
+    font-family: inherit;
+    color: inherit;
+    background: none;
+    border: none;
+    border-bottom: 2px solid var(--primary-color);
+    outline: none;
+    width: 100%;
+    padding: 2px 5px;
+}
+
+.editable-title input {
+    font-size: 1.3em;
+}

@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Woo Quality Checklist",
+  "version": "2.0",
+  "description": "An enhanced checklist for ticket handling with progress tracking, dark mode, and keyboard shortcuts",
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png",
+    "default_title": "Quality Checklist"
+  },
+  "permissions": [
+    "storage"
+  ],
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  }
+}

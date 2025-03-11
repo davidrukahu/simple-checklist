@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Woo Quality Checklist</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="header">
+        <h2 class="editable-title" data-default="Woo Quality Checklist">Woo Quality Checklist</h2>
+        <div class="controls">
+            <button id="theme-toggle" title="Mood">
+                <i class="fas fa-moon"></i>
+            </button>
+            <button id="edit-mode" title="Edit/Save">
+                <i class="fas fa-edit"></i>
+            </button>
+        </div>
+    </div>
+    <div class="progress-bar">
+        <div class="progress-fill"></div>
+        <span class="progress-text">0%</span>
+    </div>
+    <form id="checklist-form">
+        <div class="section" data-section="tone">
+            <div class="section-header">
+                <h3 class="editable-category" data-default="Tone & Validation">Tone & Validation</h3>
+                <div class="section-controls edit-only">
+                    <button type="button" class="add-item" title="Add new item">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+            </div>
+            <label><input type="checkbox"> Connect personally (friendly, notice details, match their tone)</label><br>
+            <label><input type="checkbox"> Acknowledge emotions genuinely (not just copying their words)</label><br>
+            <label><input type="checkbox"> Validate their business goal (not just technical problem)</label><br>
+        </div>
+        <div class="section" data-section="action">
+            <div class="section-header">
+                <h3 class="editable-category" data-default="Action/Answer">Action/Answer</h3>
+                <div class="section-controls edit-only">
+                    <button type="button" class="add-item" title="Add new item">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+            </div>
+            <label><input type="checkbox"> Explain why each step is needed (not just what to do)</label><br>
+            <label><input type="checkbox"> Organize complex responses clearly (headings, bullets, recaps)</label><br>
+            <label><input type="checkbox"> Make information accessible (annotate visuals, specific links)</label><br>
+        </div>
+        <div class="section" data-section="notes">
+            <div class="section-header">
+                <h3 class="editable-category" data-default="Internal Notes">Internal Notes</h3>
+                <div class="section-controls edit-only">
+                    <button type="button" class="add-item" title="Add new item">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+            </div>
+            <label><input type="checkbox"> Problem summary (clear issue definition for anyone reading)</label><br>
+            <label><input type="checkbox"> Journey documentation (steps taken, outcomes, reasoning)</label><br>
+            <label><input type="checkbox"> Forward planning (specific next steps, not just "awaiting reply")</label><br>
+            <label><input type="checkbox"> Business insights (discovery observations, opportunities)</label><br>
+        </div>
+        <div class="section" data-section="admin">
+            <div class="section-header">
+                <h3 class="editable-category" data-default="Administrative Tasks">Administrative Tasks</h3>
+                <div class="section-controls edit-only">
+                    <button type="button" class="add-item" title="Add new item">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+            </div>
+            <label><input type="checkbox"> Complete all required ZD fields</label><br>
+            <label><input type="checkbox"> Use correct macros</label><br>
+            <label><input type="checkbox"> Sales/user notes where appropriate</label><br>
+        </div>
+        <div class="form-footer">
+            <button type="reset" class="reset-btn" title="Reset (Alt+R)">
+                <i class="fas fa-undo"></i> Reset
+            </button>
+            <div class="completion-info" style="display: none;">
+                Completed: <span id="completion-time"></span>
+            </div>
+        </div>
+    </form>
+    <div class="keyboard-shortcuts">
+        <button id="show-shortcuts" title="Shortcuts">
+            <i class="fas fa-keyboard"></i>
+        </button>
+        <div class="shortcuts-modal" style="display: none;">
+            <h3>Keyboard Shortcuts</h3>
+            <ul>
+                <li><kbd>Alt</kbd> + <kbd>R</kbd> - Reset checklist</li>
+                <li><kbd>Alt</kbd> + <kbd>D</kbd> - Toggle dark mode</li>
+                <li><kbd>1-9</kbd> - Toggle checkboxes</li>
+                <li><kbd>Alt</kbd> + <kbd>S</kbd> - Show/hide shortcuts</li>
+            </ul>
+        </div>
+    </div>
+</body>
+<script src="popup.js"></script>
+</html>
