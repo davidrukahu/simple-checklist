@@ -11,11 +11,14 @@
     <div class="header">
         <h2 class="editable-title" data-default="Woo Quality Checklist">Woo Quality Checklist</h2>
         <div class="controls">
-            <button id="theme-toggle">
+            <button id="theme-toggle" title="Toggle dark mode">
                 <i class="fas fa-moon"></i>
             </button>
-            <button id="edit-mode">
+            <button id="edit-mode" title="Toggle edit mode">
                 <i class="fas fa-edit"></i>
+            </button>
+            <button id="show-shortcuts" title="Show keyboard shortcuts">
+                <i class="fas fa-keyboard"></i>
             </button>
         </div>
     </div>
@@ -82,13 +85,21 @@
                 <button type="reset" class="reset-btn" title="Reset checklist (Alt+R)">
                     <i class="fas fa-undo"></i> Reset
                 </button>
-                
             </div>
             <div class="completion-info" style="display: none;">
                 Completed: <span id="completion-time"></span>
             </div>
         </div>
     </form>
+    <div class="shortcuts-modal" style="display: none;">
+        <h3>Keyboard Shortcuts</h3>
+        <ul>
+            <li><kbd>Alt</kbd> + <kbd>R</kbd> - Reset checklist</li>
+            <li><kbd>Alt</kbd> + <kbd>D</kbd> - Toggle dark mode</li>
+            <li><kbd>1-9</kbd> - Toggle checkboxes</li>
+            <li><kbd>Alt</kbd> + <kbd>S</kbd> - Show/hide shortcuts</li>
+        </ul>
+    </div>
 </body>
 <script src="popup.js"></script>
 </html>

@@ -294,3 +294,17 @@ document.addEventListener('keydown', (e) => {
         }
     }
 });
+
+// Close shortcuts modal when clicking outside
+document.addEventListener('click', (e) => {
+    if (shortcutsModal.style.display === 'block' && 
+        !showShortcuts.contains(e.target) && 
+        !shortcutsModal.contains(e.target)) {
+        shortcutsModal.style.display = 'none';
+    }
+});
+
+// Toggle shortcuts modal
+showShortcuts.addEventListener('click', () => {
+    shortcutsModal.style.display = shortcutsModal.style.display === 'none' ? 'block' : 'none';
+});
